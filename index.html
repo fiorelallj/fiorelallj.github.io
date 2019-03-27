@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+    integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <title>Vuejs-12</title>
+</head>
+<body>
+    <main class="row">
+        <input type="text" v-model="intro" class="form-control">
+
+        <div class="card text-center" style="width: 18rem; margin-left:20px" v-for="item in filtrarGenero"> <!--filtrar genero importante!!!!! renderizar al filtro no a la variable!!!1-->
+            <img style="height: 150px; width: 150px;  margin: 20px" class="card-img-top rounded-circle mx-auto d-block" v-bind:src="item.picture.large" :alt="item.name.frist">
+            <div class="card-body">
+              <p class="card-title">Name: {{item.name.title}} {{item.name.first}} {{item.name.last}}</p>
+              <p>Gender: {{item.gender}}</p>
+              <p>Location: {{item.location.street}}</p>
+              <p>Email: {{item.email}}</p>
+              <p>Phone: {{item.phone}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <pre>{{$data}}</pre>
+        </div>
+    </main>
+
+
+<!--Vuejs-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
